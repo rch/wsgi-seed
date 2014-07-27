@@ -1,0 +1,15 @@
+uWSGI
+Flask
+Frozen-Flask
+SQLAlchemy
+Flask-SQLAlchemy
+psycopg2
+MySQL-python
+msgpack-python
+Celery
+Genshi
+protobuf
+python-dateutil
+#h5py
+
+
