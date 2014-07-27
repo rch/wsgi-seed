@@ -6,17 +6,20 @@ function MainCtrl () {
 
 angular
   .module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'])
-  .controller('MainCtrl', MainCtrl);
+  .controller('MainCtrl', MainCtrl)
+  .config(["$asideProvider", function($asideProvider) {
+            angular.extend(
+                $asideProvider.defaults,{container:"body",html:!0}
+            );
+    }]);
 
-    
-angular.module("mgcrea.ngStrapDocs").config(
-    ["$asideProvider",function(e){
-            angular.extend(e.defaults,{container:"body",html:!0})
-        }]).controller("AsideDemoCtrl",
-            ["$scope",function(e){
-                e.aside={
-                    title:"Settings",
-                    content:"Hello Aside<br />This is a multiline message!"
-                }
-            }]
-        );
+
+function AsideDemoCtrl ($scope) {
+    $scope.aside = {
+        title:"Settings",
+        content:"<br/>"
+    }
+}
+
+angular.module("mgcrea.ngStrapDocs")
+    .controller("AsideDemoCtrl", AsideDemoCtrl);
