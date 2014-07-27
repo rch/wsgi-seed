@@ -1,8 +1,13 @@
 "use strict";
 
-var app = angular.module("mgcrea.ngStrapDocs",['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']);
+function MainCtrl () {
+  
+}
 
-app.controller('MainCtrl', function($scope) {});
+angular
+  .module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'])
+  .controller('MainCtrl', MainCtrl);
+
     
 angular.module("mgcrea.ngStrapDocs").config(
     ["$asideProvider",function(e){
@@ -13,6 +18,5 @@ angular.module("mgcrea.ngStrapDocs").config(
                     title:"Settings",
                     content:"Hello Aside<br />This is a multiline message!"
                 }
-    }
-]);
-
+            }]
+        );
