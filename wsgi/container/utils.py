@@ -1,6 +1,5 @@
 import flask
 from celery import Celery
-import sqlite3.dbapi2 as sqlite3
 
 
 def make_celery(app):
