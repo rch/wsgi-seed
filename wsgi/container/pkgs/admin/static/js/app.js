@@ -5,7 +5,7 @@ function MainCtrl () {
 }
 
 angular
-  .module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'])
+  .module('admin.ngApp', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'])
   .controller('MainCtrl', MainCtrl)
   .config(["$asideProvider", function($asideProvider) {
             angular.extend(
@@ -21,5 +21,5 @@ function AsideDemoCtrl ($scope) {
     }
 }
 
-angular.module("mgcrea.ngStrapDocs")
+angular.module("admin.ngApp")
     .controller("AsideDemoCtrl", AsideDemoCtrl);
