@@ -14,7 +14,7 @@ angular
     }]);
 
 
-function AsideDemoCtrl ($scope) {
+function AsideCtrl ($scope) {
     $scope.aside = {
         title:"Settings",
         content:"<br/>"
@@ -22,4 +22,22 @@ function AsideDemoCtrl ($scope) {
 }
 
 angular.module("admin.ngApp")
-    .controller("AsideDemoCtrl", AsideDemoCtrl);
+    .controller("AsideCtrl", AsideCtrl);
+
+function TypeaheadCtrl ($scope, $http) {
+    $scope.selectedContent = "Content";
+    $scope.selectedTags = "Tags";
+    $scope.selectedTitle = "";
+    $scope.getEntries = function(viewValue) {
+        var args = {title: viewValue};
+        return $http.get('http://localhost:5000/admin/entries.json?', {params: args}).then(
+            function(e) {
+                return e.data.entries
+            });
+    };
+}
+
+angular.module("admin.ngApp")
+    .controller("TypeaheadCtrl", TypeaheadCtrl);
+
+            

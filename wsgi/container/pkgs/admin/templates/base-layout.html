@@ -52,18 +52,33 @@
         </nav>
     </header>
     <div class="continer" style="border-top:1px solid #bbb;border-bottom:1px solid #bbb">
-        <div style="margin:10px;">
-            <!-- ngInclude: 'aside/docs/aside.demo.html' -->
-            <div class="bs-docs-section" ng-controller="AsideDemoCtrl">
-                <!-- Button to trigger a default aside with a scope as an object {title:'', content:'', etc.} -->
-                <button type="button" class="btn btn-primary"
-                    data-placement="left"
-                    data-animation="am-fade-and-slide-left"
-                    data-container="body"
-                    data-template="${url_for('admin.aside')}" bs-aside="aside">
-                    Settings<br />
-                </button>
-            </div>
+        <div class="bs-docs-section" style="margin:10px;" ng-controller="AsideCtrl">
+            <!-- Button to trigger a default aside with a scope as an object {title:'', content:'', etc.} -->
+            <button type="button" class="btn btn-primary"
+                data-placement="left"
+                data-animation="am-fade-and-slide-left"
+                data-container="body"
+                data-template="${url_for('admin.aside')}" bs-aside="aside">
+                Settings<br />
+            </button>
+        </div>
+    </div>
+    <div class="continer" style="margin:10px;" ng-controller="TypeaheadCtrl">
+        <div class="row">
+            <form class="col-md-5" role="form">
+                <div class="form-group">
+                    <label class="sr-only">Title</label>
+                    <input type="text" class="form-control" ng-model="selectedTitle" ng-options="entry for entry in getEntries($$viewValue)" placeholder="Enter title" bs-typeahead=""/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Tags</label>
+                    <input type="text" class="form-control" ng-model="selectedTags" data-placement="right" data-type="info" data-container="body" placeholder="Enter tags" data-trigger="focus" bs-tooltip="tooltip"/>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Content</label>
+                    <textarea class="form-control" rows="5" ng-model="selectedContent"></textarea>
+                </div>
+            </form>
         </div>
     </div>
     <script src="${url_for('angular.static', filename='js/angular.min.js')}"></script>
