@@ -30,7 +30,7 @@ function TypeaheadCtrl ($scope, $http) {
     $scope.selectedTitle = "";
     $scope.getEntries = function(viewValue) {
         var args = {title: viewValue};
-        return $http.get('http://localhost:5000/admin/entries.json?', {params: args}).then(
+        return $http.get('//admin/entries.json?', {params: args}).then(
             function(e) {
                 return e.data.entries
             });
