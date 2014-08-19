@@ -3,6 +3,7 @@ Flask
 Frozen-Flask
 SQLAlchemy
 Flask-SQLAlchemy
+Flask-Restless
 psycopg2
 MySQL-python
 msgpack-python
